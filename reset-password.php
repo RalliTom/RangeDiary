@@ -82,6 +82,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
+    <div class="page-header">
+        <h1 style="text-align:center;">RangeDiary</h1>
+    </div>
     <div class="wrapper">
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
