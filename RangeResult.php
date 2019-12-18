@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Event</title>
+    <title>Results</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
@@ -17,9 +17,9 @@
         <h1>Range Diary</h1>
     </header>
 
-    <div class="Event">
-        <h1>Event</h1>
-        <form action="addEvent.php" method="post">
+    <div class="Results">
+        <h1>Results</h1>
+        <form action="" method="post">
             <label for="place">
                 <i class="fas fa-map"></i>
             </label>
@@ -32,11 +32,11 @@
                 <i class="fas fa-bullseye"></i>
             </label>
             <input type="text" name="eResult" placeholder="Event Result" id="eResult">
-            <input type="submit" value="Add Event">
+            <input type="submit" value="Get Events">
         </form>
 		
 		<br><br>
-        <form action="addResult.php" method="post">
+        <form action="" method="post">
 			<label for="weapon">
                 <i class="fas fa-check"></i>
             </label>
@@ -83,7 +83,7 @@
 			<br><br>
 			
 			<br><br>
-		 <input style="margin-top:0px;" type="submit" value="Save Result">
+		 
 		 </form>
 	</div>
 	<div class="page-footer">

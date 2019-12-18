@@ -26,8 +26,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <p>Hit or miss, just keep on blasting!</p>
     <div style="padding:100px;margin:100px;">
         <p>Choose your action:</p>
-        <a href="" class="btn btn-success">New Session</a>
-        <a href="" class="btn btn-primary">Recent Results</a>
+        <a href="RangeDiary.php" class="btn btn-success">New Session</a>
+        <a href="RangeResult.php" class="btn btn-primary">Recent Results</a>
     </div>
     <div class="page-footer">
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
