@@ -9,7 +9,7 @@ $usedTime = filter_input(INPUT_POST, 'usedTime');
 $range = filter_input(INPUT_POST, 'range');
 $roundsUsed = filter_input(INPUT_POST, 'roundsUsed');
 $target = filter_input(INPUT_POST, 'target');
-
+$eid = filter_input(INPUT_POST, 'rowid');
 $sid = $_SESSION['id'];
 
 //input vadilation
@@ -29,12 +29,12 @@ else{
 	//insertion of data to results table
 	//$newdate = date_format($date,"Y-m-d");
 	
-	$sql = "INSERT INTO results (place, date, results, userid, weapon, timeused, rangedata, targets, rounds)
-	values ('$place','$date','$eresult','$sid','$weapon','$usedTime','$range','$target','$roundsUsed')";
+	$sql = "update results set place='$place', date='$date', results='$eresult', weapon='$weapon', timeused='$usedTime', rangedata='$range', targets='$target', rounds='$roundsUsed'
+	 where eventid  = '$eid'";
 if ($con->query($sql)){
-$message = "Event saved";
+$message = "Update saved";
 echo "<script type='text/javascript'>alert('$message');</script>";
-echo "<meta http-equiv='refresh' content='0;url=RangeDiary.php'>";
+echo "<meta http-equiv='refresh' content='0;url=RangeResults.php'>";
 }
 else{
 echo "Error: ". $sql ."

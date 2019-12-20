@@ -1,6 +1,15 @@
 <?php
 //session_start();
 //variables filtering
+$place =  array();
+$date =  array();
+$eresult =  array();
+$weapon =  array();
+$usedTime =  array();
+$range =  array();
+$roundsUsed =  array();
+$target =  array();
+$eventid =  array();
 $sid = $_SESSION['id'];
 
 	$DATABASE_HOST = "localhost:3306";
@@ -22,7 +31,16 @@ if ($con->query($sql)){
 	echo "<select id='forview'>";
 while ($row = mysqli_fetch_array($result)) {
 	echo "<option value='" . $row['eventid'] . "'> " . $row['date'] . " " . $row['place'] . "</option>";
-  //  echo   $row['date'] . " " . $row['place'] . " " . $row['results'] . "<br>";
+	$place[] = $row['place'];
+	$date[] = $row['date'];
+	$eresult[] = $row['results'];
+	$weapon[] = $row['weapon'];
+	$usedTime[] = $row['timeused'];
+	$range[] = $row['rangedata'];
+	$roundsUsed[] = $row['rounds'];
+	$target[] = $row['target'];
+	$eventid[] = $row['eventid'];
+	
 }
 echo "</select>";
 //$message = "Data loaded";
