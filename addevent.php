@@ -11,10 +11,7 @@ $roundsUsed = filter_input(INPUT_POST, 'roundsUsed');
 $target = filter_input(INPUT_POST, 'target');
 
 $sid = $_SESSION['id'];
-//$sid =  trim($_SESSION["id"]);
-//$ssid = intval($sid);
-//echo "<script type='text/javascript'>alert('$sid');</script>";
-//echo ("Hello ". "$sid "."<br/>$ssid "."<br/>$place "."!");
+
 //input vadilation
 if (!empty($place)){
 if (!empty($date)){

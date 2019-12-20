@@ -1,6 +1,7 @@
 <?php
 session_start();
 //variables filtering
+$selected = filter_input(INPUT_POST, 'forview');
 $sid = $_SESSION['id'];
 
 	$DATABASE_HOST = "localhost:3306";
@@ -15,11 +16,19 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 }
 else{
 	//insertion of data to results table
-$sql = "select * from results where useid  = '$sid' ";
+$sql = "select * from results where userid  = '$sid' and eventid = '$selected' ";
 if ($con->query($sql)){
-$message = "Data saved";
+	//$result = mysql_query("SELECT * FROM your_table");
+	$result = mysqli_query($con, $sql);
+	
+while ($row = mysqli_fetch_array($result)) {
+	//echo "<option value='" . $row['eventid'] . "'> " . $row['date'] . " " . $row['place'] . "</option>";
+  //  echo   $row['date'] . " " . $row['place'] . " " . $row['results'] . "<br>";
+}
+//echo "</select>";
+$message = "Data loaded";
 echo "<script type='text/javascript'>alert('$message');</script>";
-echo "<meta http-equiv='refresh' content='0;url=RangeDiary.php'>";
+//echo "<meta http-equiv='refresh' content='0;url=RangeDiary.php'>";
 }
 else{
 echo "Error: ". $sql ."

@@ -26,7 +26,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <header> 
         <h1>Range Diary</h1>
     </header>
-
+	<div class="Event">
+        <h1>Session info</h1>
+		<form action="getselected.php" method="post">
+			<?php include('getresult.php') ?>
+			
+            <input style="margin-top:0px;" type="submit" value="Select Result">
+			<br><br>
+			
+			<br><br>
+		 
+		 </form>
+	</div>
     <div class="Results">
         <h1>Results</h1>
         <form action="" method="post">
@@ -38,15 +49,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <i class="fas fa-calendar"></i>
             </label>
             <input type="text" name="dates" placeholder="Date YYYY-MM-DD" id="dates" required>
-			<label for="eResult">
-                <i class="fas fa-bullseye"></i>
-            </label>
-            <input type="text" name="eResult" placeholder="Event Result" id="eResult">
-            <input type="submit" value="Get Events">
-        </form>
+
 		
 		<br><br>
-        <form action="" method="post">
+        
 			<label for="weapon">
                 <i class="fas fa-check"></i>
             </label>
@@ -74,28 +80,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <input style="margin-top:0px;" type="submit" value="Add Result">
         </form>
     </div>
-	<div class="Event">
-        <h1>Session info</h1>
-		<form action="SaveResult.php" method="post">
-			<label for="placeSave">
-                <i class="fas fa-map"></i>
-            </label>
-            <input type="text" name="placeSave" placeholder="Place" id="placeSave" required>
-            <label for="datesSave">
-                <i class="fas fa-calendar"></i>
-            </label>
-            <input type="text" name="datesSave" placeholder="Date" id="datesSave" required>
-			<label for="eResultSave">
-                <i class="fas fa-bullseye"></i>
-            </label>
-			
-            <input type="text" name="eResultSave" placeholder="Event Result" id="eResultSave">
-			<br><br>
-			
-			<br><br>
-		 
-		 </form>
-	</div>
+
 	<div class="page-footer">
         <a href="welcome.php".php" class="btn btn-warning">Main page</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
