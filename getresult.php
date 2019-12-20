@@ -26,11 +26,12 @@ else{
 	//insertion of data to results table
 $sql = "select * from results where userid  = '$sid' ";
 if ($con->query($sql)){
-	//$result = mysql_query("SELECT * FROM your_table");
+	//Creating select-list from sql query
 	$result = mysqli_query($con, $sql);
 	echo "<select id='forview'>";
 while ($row = mysqli_fetch_array($result)) {
 	echo "<option value='" . $row['eventid'] . "'> " . $row['date'] . " " . $row['place'] . "</option>";
+	//saving query data for html insertion
 	$place[] = $row['place'];
 	$date[] = $row['date'];
 	$eresult[] = $row['results'];
@@ -43,9 +44,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 }
 echo "</select>";
-//$message = "Data loaded";
-//echo "<script type='text/javascript'>alert('$message');</script>";
-//echo "<meta http-equiv='refresh' content='0;url=RangeDiary.php'>";
+
 }
 else{
 echo "Error: ". $sql ."

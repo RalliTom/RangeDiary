@@ -26,7 +26,7 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 . mysqli_connect_error());
 }
 else{
-	//insertion of data to results table
+	//updating  data at results table
 	//$newdate = date_format($date,"Y-m-d");
 	
 	$sql = "update results set place='$place', date='$date', results='$eresult', weapon='$weapon', timeused='$usedTime', rangedata='$range', targets='$target', rounds='$roundsUsed'

@@ -15,12 +15,13 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 . mysqli_connect_error());
 }
 else{
-	//insertion of data to results table
+	//inserting data to results table
 $sql = "select * from results where userid  = '$sid' and eventid = '$selected' ";
 if ($con->query($sql)){
 	//$result = mysql_query("SELECT * FROM your_table");
 	$result = mysqli_query($con, $sql);
 	
+	//below is still some work in progress for event selection
 while ($row = mysqli_fetch_array($result)) {
 	//echo "<option value='" . $row['eventid'] . "'> " . $row['date'] . " " . $row['place'] . "</option>";
   //  echo   $row['date'] . " " . $row['place'] . " " . $row['results'] . "<br>";
